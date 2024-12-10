@@ -13,6 +13,8 @@ function getPlays()
 	var today = new Date();
 	var dayOfWeek = today.getDay();  //Sunday = 0, Monday = 1, etc.
 
+	var bggUser = document.getElementById("bgg_user").value;
+	
 	var toDate = new Date();
 	toDate.setDate(toDate.getDate() - dayOfWeek - (weeksBack*7));  //Most Recent Sunday
 	var fromDate = new Date();
@@ -23,7 +25,7 @@ function getPlays()
 	document.getElementById("date_range").style.display = "block";
 	
 	//Async web service call, go to handlePlaysArrayCallback callback function
-	downloadPlays("tropical",formatDate(fromDate),formatDate(toDate), handlePlaysArrayCallback);
+	downloadPlays(bggUser,formatDate(fromDate),formatDate(toDate), handlePlaysArrayCallback);
 }
 
 /*
