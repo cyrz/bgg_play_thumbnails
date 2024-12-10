@@ -23,7 +23,7 @@ function getPlays()
 	document.getElementById("date_range").style.display = "block";
 	
 	//Async web service call, go to handlePlaysArrayCallback callback function
-	downloadPlays("giantmike",formatDate(fromDate),formatDate(toDate), handlePlaysArrayCallback);
+	downloadPlays("tropical",formatDate(fromDate),formatDate(toDate), handlePlaysArrayCallback);
 }
 
 /*
@@ -107,7 +107,7 @@ function handleThingsListCallback(xmlResponse)
 		
 	
 		if (imageId.length > 0)
-			bggCode += "[ImageID=" + imageId + "square inline]";
+			bggCode += "[ImageID=" + imageId + "micro inline]";
 	}
 	
 	document.getElementById("bgg_code").innerHTML += bggCode;
