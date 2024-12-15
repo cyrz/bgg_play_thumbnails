@@ -84,12 +84,8 @@ function handlePlaysArrayCallback(xmlResponse)
 */
 function addGameToList(gameId, name)
 {
-	var gameListItem = "<div class='bgg_game_col1'>";
-	gameListItem += "<button type='button' class='button' onclick='copyGame(this, " + gameId + ")'>" + name + "</button>";
-	gameListItem += "</div>";
-	
-	gameListItem += "<div class='bgg_game_item bgg_game_col2' id='bgg_game_" + gameId + "'>";
-	gameListItem += "[thing=" + gameId + "][/thing]";
+	var gameListItem = "<div id='bgg_game_" + gameId + "'>";
+	gameListItem += "[thing=" + gameId + "]" + name + "[/thing]";
 	gameListItem += "</div>";
 	
 	document.getElementById("bgg_game_list").innerHTML = gameListItem + document.getElementById("bgg_game_list").innerHTML;
